@@ -1,2 +1,2 @@
 # backup-xwiki
-Script de sauvegarrde et resr)tauration pour XWIKI
+Script de sauvegarde et restauration pour XWIKI sur UBUNTU server 16.04
