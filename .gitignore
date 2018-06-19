@@ -1,0 +1,5 @@
+# exclusion du contenu des dossiers de sauvegardes xwikisauve et apachesauve
+xwikisauve/**
+apachesauve/**
+*.cnf
+*.log
