@@ -20,26 +20,10 @@ usage() { echo "
 # -m sauvegarde manuelle --> le repertoire=$(date '+%Y-%m-%d-%H-%M-%S')
 "; }
 
-DBUSER="xwiki"
-DBLOGINPATH="xwikidump"
 
-#XWIKI config folder
-CONFFOLDER=/etc/xwiki
+#import des chemins vers les repetoires à sauvegarder
 
-#XWIKI data folder
-DATAFOLDER=/var/lib/xwiki
-
-# repertoire ou trouver les nom des bases de données mysql
-BASESFOLDER=/var/lib/xwiki/data/storage
-
-#XWIKI webapps folder
-WEBAPPSFOLDER=/usr/lib/xwiki
-
-#Biblio folder
-BIBLIOFOLDER=/usr/local/Biblio
-#SAUVEGARDE folder
-SAUVEFOLDER=/home/pierre/backup/xwikisauve
-
+source repertoires.cnf
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if (($# == 0)); 
@@ -74,9 +58,6 @@ else
 	echo " le repertoire n'existe pas on le crée"
 fi
 
-#if false #debug============================================
-#then
-#code à sauter
 # il faut recuperer le nom des  bases de donnés a sauvegarder :wiki +sous wiki,
 # elle ont le meme nom que les repertoires contenu dans BASESFOLDER
 #bases.list contient le nom des bases de données à sauvegarder
@@ -101,8 +82,6 @@ mysqldump  --login-path=${DBLOGINPATH} -h localhost  --max_allowed_packet=512m -
 done
 
 echo " fin debug"
-#fi
-#debug============================================================
 
 #Backup External Data Storage
 echo "Backup data"
@@ -137,11 +116,6 @@ then
 echo " fin debug"
 fi
 #debug============================================================
-
-
-
-
-
 
 
 echo "TERMINE"

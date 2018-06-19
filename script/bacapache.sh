@@ -15,8 +15,8 @@ usage() { echo "
 "; }
 
 
-#SAUVEGARDE folder
-SAUVEFOLDER=/home/pierre/backup/apachesauve
+# import de chemins vers les repertoires de sauvegares
+source repertoires.cnf
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 while getopts ":jsm" opt

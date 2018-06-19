@@ -1,0 +1,28 @@
+# c est un model du fichierr de configuration pour les differents chemin de sauvegarde
+#ce fichier doit etre renome en repertoires.cnf
+#ce fichier est sourcé par les scripts de sauvegarde et restauration
+
+
+DBLOGINPATH="mon_path"   # permet la connextion a mysql par --login-path 
+# en utilisant  mysl_config_editor (sudo)
+#remplacer "mon_path" par votre valeur
+
+#XWIKI config folder
+CONFFOLDER=/etc/xwiki
+
+#XWIKI data folder
+DATAFOLDER=/var/lib/xwiki
+
+# repertoire ou trouver les nom des bases de données mysql
+BASESFOLDER=/var/lib/xwiki/data/storage
+
+#XWIKI webapps folder
+WEBAPPSFOLDER=/usr/lib/xwiki
+
+#Biblio folder
+BIBLIOFOLDER=/usr/local/Biblio
+
+
+#SAUVEGARDE folder suposé situé dans le repertoire de l'utilisateur
+SAUVEFOLDER=/home/"user"/backup/apachesauve
+remplacer "user" par votre user

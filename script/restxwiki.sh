@@ -8,26 +8,11 @@
 #restaure de /var/lib/xwiki fichier de donnes
 #restaure de /usr/lib/xwiki fichier webapps
 
-#source init.cf /var	li	
+source repertoires.cnf
+
 #1 base xwiki et une base pour chaque sous-wiki
-DBLOGINPATH="xwikidump"
-
-#XWIKI config folder
-CONFFOLDER=/etc/xwiki
-
-#XWIKI data folder
-DATAFOLDER=/var/lib/xwiki
-BASESFOLDER=/var/lib/xwiki/data/storage
-
-#XWIKI webapps folder
-WEBAPPSFOLDER=/usr/lib/xwiki
-
-#SAUVEGARDE folder
-SAUVEFOLDER=${HOME}/backup/xwikisauve
-
-#Biblio foder
-BIBLIOFOLDER=/usr/local/Biblio
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 echo " nom du repertoire de restauration "
 read DATE
@@ -58,8 +43,6 @@ fi
 #bases.list dans le repertoire de sauvegarde contient le nom des bases de données à sauvegarder
 # ${SAUVEFOLDER}/${DATE}/bases.list
 
-#if false ############################""début debug
-#then
 
 { i=0 
 while read base 
@@ -83,7 +66,6 @@ gunzip < ${SAUVEFOLDER}/${DATE}/${DATABASE}.sql.gz | mysql  --login-path=${DBLOG
 mysql --login-path=${DBLOGINPATH} -e "SET FOREIGN_KEY_CHECKS=1;"
 
 done
-#fi ####################"fin debug
 
 mkdir /tmp/${DATE}
 #restaure External Data Storage
