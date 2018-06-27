@@ -84,3 +84,265 @@ tar: Suppression de « ../ » au début des noms des membres
 Backup Biblio
 tar: Suppression de « ../ » au début des noms des membres
 TERMINE
+ sauvegarde dans dans le repertoire :mardi
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+/home/pierre/backup/script/bacxwiki.sh: ligne 26: repertoires.cnf: Aucun fichier ou dossier de ce type
+ sauvegarde dans dans le repertoire :mercredi
+ le repertoire n'existe pas on le crée
+ fin debug
+Backup data
+ repertorer DATAFOLDER  
+tar: Suppression de « ../ » au début des noms des membres
+tar: ../xwiki : stat impossible: Aucun fichier ou dossier de ce type
+tar: Arrêt avec code d'échec à cause des erreurs précédentes
+Backup config
+ repertorer CONFFOLDER  
+tar: Suppression de « ../ » au début des noms des membres
+tar: ../xwiki : stat impossible: Aucun fichier ou dossier de ce type
+tar: Arrêt avec code d'échec à cause des erreurs précédentes
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+tar: ../xwiki : stat impossible: Aucun fichier ou dossier de ce type
+tar: Arrêt avec code d'échec à cause des erreurs précédentes
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+tar: ../Biblio : stat impossible: Aucun fichier ou dossier de ce type
+tar: Arrêt avec code d'échec à cause des erreurs précédentes
+TERMINE
+/home/pierre/backup/script/bacxwiki.sh: ligne 26: repertoires.cnf: Aucun fichier ou dossier de ce type
+ sauvegarde dans dans le repertoire :mercredi
+le repertoire existe déja , on va ecraser les fichier avec la nouvelle sauvegarde
+ fin debug
+Backup data
+ repertorer DATAFOLDER  
+tar: Suppression de « ../ » au début des noms des membres
+tar: ../xwiki : stat impossible: Aucun fichier ou dossier de ce type
+tar: Arrêt avec code d'échec à cause des erreurs précédentes
+Backup config
+ repertorer CONFFOLDER  
+tar: Suppression de « ../ » au début des noms des membres
+tar: ../xwiki : stat impossible: Aucun fichier ou dossier de ce type
+tar: Arrêt avec code d'échec à cause des erreurs précédentes
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+tar: ../xwiki : stat impossible: Aucun fichier ou dossier de ce type
+tar: Arrêt avec code d'échec à cause des erreurs précédentes
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+tar: ../Biblio : stat impossible: Aucun fichier ou dossier de ce type
+tar: Arrêt avec code d'échec à cause des erreurs précédentes
+TERMINE
+/bin/bash: bacxwiki.sh : commande introuvable
+/bin/bash: bacxwiki.sh : commande introuvable
+/bin/bash: bacxwiki.sh : commande introuvable
+/bin/bash: bacxwiki.sh : commande introuvable
+/bin/bash: bacxwiki.sh : commande introuvable
+/bin/bash: bacxwiki.sh : commande introuvable
+ sauvegarde dans dans le repertoire :mercredi
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :mercredi
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :mercredi
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :jeudi
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :vendredi
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :samedi
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :dimanche
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :25
+le repertoire existe déja , on va ecraser les fichier avec la nouvelle sauvegarde
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :lundi
+ le repertoire n'existe pas on le crée
+base : xwiki
+bases :  xwiki
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :mardi
+ le repertoire n'existe pas on le crée
+base : sifold
+bases :  sifold
+base : xwiki
+bases :  sifold xwiki
+Backup Mysql base:sifold
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
+ sauvegarde dans dans le repertoire :mercredi
+le repertoire existe déja , on va ecraser les fichier avec la nouvelle sauvegarde
+base : sifold
+bases :  sifold
+base : xwiki
+bases :  sifold xwiki
+Backup Mysql base:sifold
+Backup Mysql base:xwiki
+ fin debug
+Backup data
+ repertorer DATAFOLDER  /var/lib/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup config
+ repertorer CONFFOLDER  /etc/xwiki
+tar: Suppression de « ../ » au début des noms des membres
+Backup webapps
+tar: Suppression de « ../ » au début des noms des membres
+Backup Biblio
+tar: Suppression de « ../ » au début des noms des membres
+TERMINE
