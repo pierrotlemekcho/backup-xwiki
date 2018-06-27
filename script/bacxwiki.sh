@@ -23,7 +23,7 @@ usage() { echo "
 
 #import des chemins vers les repetoires à sauvegarder
 
-source repertoires.cnf
+source /home/pierre/backup/script/repertoires.cnf
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if (($# == 0)); 
@@ -50,18 +50,18 @@ done
 echo " sauvegarde dans dans le repertoire :$DATE"
 
 # dossier de sauvegarde s'il nexiste pas on le creer
-if [ -d  ${SAUVEFOLDER}/${DATE} ]
+if [ -d  ${SAUVEFOLDERX}/${DATE} ]
 then
 	echo "le repertoire existe déja , on va ecraser les fichier avec la nouvelle sauvegarde"
 else
-	mkdir ${SAUVEFOLDER}/${DATE}
+	mkdir ${SAUVEFOLDERX}/${DATE}
 	echo " le repertoire n'existe pas on le crée"
 fi
 
 # il faut recuperer le nom des  bases de donnés a sauvegarder :wiki +sous wiki,
 # elle ont le meme nom que les repertoires contenu dans BASESFOLDER
 #bases.list contient le nom des bases de données à sauvegarder
-ls ${BASESFOLDER} > ${SAUVEFOLDER}/${DATE}/bases.list
+ls ${BASESFOLDER} > ${SAUVEFOLDERX}/${DATE}/bases.list
 
 { i=0 
 while read base 
@@ -71,14 +71,14 @@ do
 	echo "base : ${base}"
 	echo "bases : ${bases}"
 done
-} < ${SAUVEFOLDER}/${DATE}/bases.list
+} < ${SAUVEFOLDERX}/${DATE}/bases.list
 
 
 #backup mysql
 for DATABASE in $bases ; do
 echo "Backup Mysql base:${DATABASE}"
 
-mysqldump  --login-path=${DBLOGINPATH} -h localhost  --max_allowed_packet=512m --add-drop-database --databases ${DATABASE} | gzip > ${SAUVEFOLDER}/${DATE}/${DATABASE}.sql.gz 
+mysqldump  --login-path=${DBLOGINPATH} -h localhost  --max_allowed_packet=512m --add-drop-database --databases ${DATABASE} | gzip > ${SAUVEFOLDERX}/${DATE}/${DATABASE}.sql.gz 
 done
 
 echo " fin debug"
@@ -87,19 +87,19 @@ echo " fin debug"
 echo "Backup data"
 cd ${DATAFOLDER}
 echo " repertorer DATAFOLDER  ${DATAFOLDER}"
-tar -zcf ${SAUVEFOLDER}/${DATE}/data.tar.gz ../xwiki/
+tar -zcf ${SAUVEFOLDERX}/${DATE}/data.tar.gz ../xwiki/
 
 
 #Backup xwiki config
 echo "Backup config"
 cd ${CONFFOLDER}
 echo " repertorer CONFFOLDER  ${CONFFOLDER}"
-tar  -zcf ${SAUVEFOLDER}/${DATE}/config.tar.gz ../xwiki/
+tar  -zcf ${SAUVEFOLDERX}/${DATE}/config.tar.gz ../xwiki/
 
 #Backup xwiki webapps 
 echo "Backup webapps"
 cd ${WEBAPPSFOLDER}
-tar -zcf ${SAUVEFOLDER}/${DATE}/webapps.tar.gz ../xwiki/
+tar -zcf ${SAUVEFOLDERX}/${DATE}/webapps.tar.gz ../xwiki/
 
 
 #Backup Biblio 
@@ -107,7 +107,7 @@ echo "Backup Biblio"
 if [ -d  ${BIBLIOFOLDER} ]
 then
 cd ${BIBLIOFOLDER}
-tar -zcf ${SAUVEFOLDER}/${DATE}/Biblio.tar.gz ../Biblio/
+tar -zcf ${SAUVEFOLDERX}/${DATE}/Biblio.tar.gz ../Biblio/
 fi
 
 if false #debug============================================

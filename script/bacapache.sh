@@ -16,7 +16,7 @@ usage() { echo "
 
 
 # import de chemins vers les repertoires de sauvegares
-source repertoires.cnf
+source /home/pierre/backup/script/repertoires.cnf
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 while getopts ":jsm" opt
@@ -34,28 +34,28 @@ done
 echo " sauvegarde dans dans le repertoire :$DATE"
 
 # dossier de sauvegarde s'il nexiste pas on le creer
-if [ -d  ${SAUVEFOLDER}/${DATE} ]
+if [ -d  ${SAUVEFOLDERA}/${DATE} ]
 then
 	echo "le repertoire existe déja , on va ecraser les fichier avec la nouvelle sauvegarde"
 else
-	mkdir ${SAUVEFOLDER}/${DATE}
+	mkdir ${SAUVEFOLDERA}/${DATE}
 	echo " le repertoire n'existe pas on le crée"
 fi
 
 cd /etc/apache2/sites-available/
-cp -p *.* ${SAUVEFOLDER}/${DATE}/.
+cp -p *.* ${SAUVEFOLDERA}/${DATE}/.
 cd /var/www/html/
-cp -p index.html ${SAUVEFOLDER}/${DATE}/.
+cp -p index.html ${SAUVEFOLDERA}/${DATE}/.
 cd /etc/libapache2-mod-jk/
-cp -p workers.properties ${SAUVEFOLDER}/${DATE}/.
+cp -p workers.properties ${SAUVEFOLDERA}/${DATE}/.
 cd /etc/tomcat8/
-cp -p server.xml ${SAUVEFOLDER}/${DATE}/.
+cp -p server.xml ${SAUVEFOLDERA}/${DATE}/.
 cd /etc/
-cp -p hosts ${SAUVEFOLDER}/${DATE}/.
+cp -p hosts ${SAUVEFOLDERA}/${DATE}/.
 cd /etc/network/
-cp -p interfaces ${SAUVEFOLDER}/${DATE}/.
+cp -p interfaces ${SAUVEFOLDERA}/${DATE}/.
 cd /etc/samba/
-cp -p smb.conf ${SAUVEFOLDER}/${DATE}/.
+cp -p smb.conf ${SAUVEFOLDERA}/${DATE}/.
 
 
 

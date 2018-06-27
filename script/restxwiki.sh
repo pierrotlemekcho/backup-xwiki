@@ -19,7 +19,7 @@ read DATE
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # on vérifie que le dossier de sauvegarde exite bien 
-if [ -d  ${SAUVEFOLDER}/${DATE} ]
+if [ -d  ${SAUVEFOLDERX}/${DATE} ]
 then
 	echo "le repertoire existe BIEN , on va ecraser les TOUT LES FICHIER avec la nouvelle sauvegarde !!"
 else
@@ -41,7 +41,7 @@ fi
 # il faut recuperer le nom des  bases de donnés a restaurer :wiki +sous wiki,
 # elle ont le meme nom que les repertoires contenu dans BASESFOLDER
 #bases.list dans le repertoire de sauvegarde contient le nom des bases de données à sauvegarder
-# ${SAUVEFOLDER}/${DATE}/bases.list
+# ${SAUVEFOLDERX}/${DATE}/bases.list
 
 
 { i=0 
@@ -52,7 +52,7 @@ do
 	echo "base : ${base}"
 	echo "bases : ${bases}"
 done
-} < ${SAUVEFOLDER}/${DATE}/bases.list
+} < ${SAUVEFOLDERX}/${DATE}/bases.list
 
 
 #restore mysql
@@ -62,7 +62,7 @@ echo "restoring Mysql base:${DATABASE}"
 mysql --login-path=${DBLOGINPATH} -e "SET FOREIGN_KEY_CHECKS=0;"
 mysql --login-path=${DBLOGINPATH} -e "DROP DATABASE ${DATABASE};"
 mysql --login-path=${DBLOGINPATH} -e "CREATE DATABASE IF NOT EXISTS ${DATABASE} DEFAULT CHARACTER SET utf8;"
-gunzip < ${SAUVEFOLDER}/${DATE}/${DATABASE}.sql.gz | mysql  --login-path=${DBLOGINPATH}  
+gunzip < ${SAUVEFOLDERX}/${DATE}/${DATABASE}.sql.gz | mysql  --login-path=${DBLOGINPATH}  
 mysql --login-path=${DBLOGINPATH} -e "SET FOREIGN_KEY_CHECKS=1;"
 
 done
@@ -75,7 +75,7 @@ mkdir /tmp/${DATE}/data
 mv -f ${DATAFOLDER}/ /tmp/${DATE}/data
 mkdir ${DATAFOLDER}
 cd ${DATAFOLDER}
-tar -zxf ${SAUVEFOLDER}/${DATE}/data.tar.gz -C ../
+tar -zxf ${SAUVEFOLDERX}/${DATE}/data.tar.gz -C ../
 
 #restaure Biblio
 if [ -d  ${BIBLIOFOLDER} ]
@@ -86,7 +86,7 @@ mkdir /tmp/${DATE}/biblio
 mv -f ${BIBLIOFOLDER}/ /tmp/${DATE}/biblio
 mkdir ${BIBLIOFOLDER}
 cd ${BIBLIOFOLDER}
-tar -zxf ${SAUVEFOLDER}/${DATE}/Biblio.tar.gz -C ../
+tar -zxf ${SAUVEFOLDERX}/${DATE}/Biblio.tar.gz -C ../
 fi
 
 
@@ -109,7 +109,7 @@ mkdir /tmp/${DATE}/config
 mv -f ${CONFFOLDER}/ /tmp/${DATE}/config
 mkdir ${CONFFOLDER}
 cd ${CONFFOLDER}
-tar -zxf ${SAUVEFOLDER}/${DATE}/config.tar.gz -C ../
+tar -zxf ${SAUVEFOLDERX}/${DATE}/config.tar.gz -C ../
 
 
 #restaure xwiki webapps 
@@ -121,7 +121,7 @@ mkdir /tmp/${DATE}/webapps
 mv -f ${WEBAPPSFOLDER}/ /tmp/${DATE}/webapps
 mkdir ${WEBAPPSFOLDER}
 cd ${WEBAPPSFOLDER}
-tar -zxf ${SAUVEFOLDER}/${DATE}/webapps.tar.gz -C ../
+tar -zxf ${SAUVEFOLDERX}/${DATE}/webapps.tar.gz -C ../
 
 
 echo "TERMINE"
