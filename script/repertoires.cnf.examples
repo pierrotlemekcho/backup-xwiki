@@ -1,6 +1,7 @@
 # c est un model du fichierr de configuration pour les differents chemin de sauvegarde
-#ce fichier doit etre renome en repertoires.cnf
-#ce fichier est sourcé par les scripts de sauvegarde et restauration
+# pour les scripts de sauvegarde et restauration xwiki
+# ce fichier doit etre renome en repertoires.cnf
+# ce fichier est sourcé par les scripts de sauvegarde et restauration
 
 
 DBLOGINPATH="mon_path"   # permet la connextion a mysql par --login-path 

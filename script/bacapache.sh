@@ -1,9 +1,10 @@
 #!/bin/bash
 
-#sauvegarde des fichiers Apache nécessaire à une restauration complète sur UBUNTU SERVER 16.04
-#pour le fonctionnement de xwiki apache tomcat avec mod -jk
-#copie des fichiers /etc/apache2/sites-available
-#copie des
+# script de sauvegarde des fichiers Apache nécessaire à une restauration complète sur UBUNTU SERVER 18.04
+# pour le fonctionnement de xwiki apache tomcat avec mod -jk
+# copie des fichiers server.xml , hosts interfaces et smb.conf en cas de
+# reinstallation complete de UBUNTU SERVER
+# 
 
 
 
@@ -15,10 +16,16 @@ usage() { echo "
 "; }
 
 
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # import de chemins vers les repertoires de sauvegares
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 source /home/pierre/backup/script/repertoires.cnf
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# chois du de la date de sauvegarde
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 while getopts ":jsm" opt
 do
 	case $opt in
@@ -33,7 +40,10 @@ done
 
 echo " sauvegarde dans dans le repertoire :$DATE"
 
-# dossier de sauvegarde s'il nexiste pas on le creer
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# dossier de sauvegarde s'il nexiste pas on le crer
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 if [ -d  ${SAUVEFOLDERA}/${DATE} ]
 then
 	echo "le repertoire existe déja , on va ecraser les fichier avec la nouvelle sauvegarde"
