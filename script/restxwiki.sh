@@ -22,13 +22,13 @@
 
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# import de chemins vers les repertoires de sauvegares
+# import des chemins vers les repertoires de sauvegardes
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 source repertoires.cnf
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Chois du repertoire de restaurationi
+# Choix du repertoire de restauration
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 echo " nom du repertoire de restauration "
@@ -60,7 +60,7 @@ fi
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # il faut recuperer le nom des  bases de donnés a restaurer :wiki +sous wiki,
 # elle ont le meme nom que les repertoires contenu dans BASESFOLDER
-#bases.list dans le repertoire de sauvegarde contient le nom des bases de données à sauvegarder
+# bases.list dans le repertoire de sauvegarde contient le nom des bases de données à sauvegarder
 # ${SAUVEFOLDERX}/${DATE}/bases.list
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -76,7 +76,7 @@ done
 
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#restore mysql
+# restore mysql
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 for DATABASE in $bases ; do
@@ -93,7 +93,7 @@ done
 mkdir /tmp/${DATE}
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#restaure External Data Storage
+# restaure External Data Storage
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 echo "Restaure data"

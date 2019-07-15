@@ -15,7 +15,7 @@ CONFFOLDER=/etc/xwiki
 DATAFOLDER=/var/lib/xwiki
 
 # repertoire ou trouver les nom des bases de données mysql
-BASESFOLDER=/var/lib/xwiki/data/storage
+BASESFOLDER=/var/lib/xwiki/data/store/file
 
 #XWIKI webapps folder
 WEBAPPSFOLDER=/usr/lib/xwiki
