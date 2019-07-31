@@ -3,3 +3,8 @@ xwikisauve/**
 apachesauve/**
 *.cnf
 *.log
+xwikirestaure/xwiki_ssh_key
+xwikirestaure/xwiki_ssh_key.pub
+xwikirestaure/terraform.tfstate
+xwikirestaure/terraform.tfstate.backup
+
