@@ -1,0 +1,74 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: add xwiki gpg key
+      apt_key:
+        url: http://maven.xwiki.org/public.gpg
+        state: present
+
+    - name: Add xwiki repository
+      apt_repository:
+        repo: deb http://maven.xwiki.org stable/
+        state: present
+        update_cache: true
+
+    - name: Install xwiki, mysql
+      apt: 
+        name: "{{ packages }}"
+      vars:
+        packages:
+          - xwiki-common=11.4
+          - xwiki-mysql-common=11.4
+          - xwiki-tomcat8-common=11.4
+          - xwiki-tomcat8-mysql=11.4
+
+    - name: Instal python mysql bindings - Ansible need it to use mysq_db
+      apt: name=python3-mysqldb state=installed
+
+    - name: Copy all backup files ca peut prendre du temps!
+      copy:
+        # we can pass xwiki_backup_path or use the current directory (./)
+        src: "{{xwiki_backup_path | default('.')}}/{{item}}"
+        dest: "/tmp/{{item}}"
+      loop:
+        - sifold.sql.gz
+        - xwiki.sql.gz
+        - webapps.tar.gz
+        - data.tar.gz
+        - config.tar.gz
+
+    - name: create databases
+      mysql_db:
+        name: "{{item}}"
+        state: present
+      loop:
+        - sifold
+        - xwiki
+
+    - name: Restore databases
+      mysql_db:
+        name: "{{item}}"
+        state: import
+        target: "/tmp/{{item}}.sql.gz"
+      loop:
+        - sifold
+        - xwiki
+
+    - name: restore config
+      unarchive:
+        src: /tmp/config.tar.gz
+        dest: /etc/xwiki
+        remote_src: yes
+
+    - name: restore webapps
+      unarchive:
+        src: /tmp/webapps.tar.gz
+        dest: /usr/lib/xwiki
+        remote_src: yes
+
+    - name: restore data
+      unarchive:
+        src: /tmp/data.tar.gz
+        dest: /var/lib/xwiki
+        remote_src: yes
+
