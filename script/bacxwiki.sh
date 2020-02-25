@@ -22,13 +22,13 @@ usage() { echo "
 
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#import des chemins vers les repetoires à sauvegarder
+#import des chemins pour les repetoires à sauvegarder
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-source /home/pierre/backup/script/repertoires.cnf
+source ~/backup/script/repertoires.cnf
 
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# chois du jour de sauvegarde
+#  jour de sauvegarde
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if (($# == 0)); 
@@ -55,7 +55,7 @@ done
 echo " sauvegarde dans dans le repertoire :$DATE"
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# dossier de sauvegarde s'il nexiste pas on le creer
+# si le dossier de sauvegarde n'existe pas on le cree
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if [ -d  ${SAUVEFOLDERX}/${DATE} ]

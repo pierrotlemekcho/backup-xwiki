@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# script de sauvegarde des fichiers Apache nécessaire à une restauration complète sur UBUNTU SERVER 18.04
-# pour le fonctionnement de xwiki apache tomcat avec mod -jk
-# copie des fichiers server.xml , hosts interfaces et smb.conf en cas de
-# reinstallation complete de UBUNTU SERVER
-# 
-
-
+# script de sauvegarde des fichiers de configuration apache nécessaires à une
+# restauration complète d'xwiki sur UBUNTU SERVER 18.04
+# pour le fonctionnement de xwiki apache+tomcat avec mod -jk
+# copie des fichiers server.xml, hosts, interfaces, smb.conf
 
 usage() { echo "
 # usage bactar [-j] [-s] [-m]
@@ -17,13 +14,13 @@ usage() { echo "
 
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# import de chemins vers les repertoires de sauvegares
+# import des chemins pour les repertoires de sauvegares
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-source /home/pierre/backup/script/repertoires.cnf
+source ~/backup/script/repertoires.cnf
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# chois du de la date de sauvegarde
+# date de sauvegarde
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 while getopts ":jsm" opt
@@ -41,7 +38,7 @@ done
 echo " sauvegarde dans dans le repertoire :$DATE"
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# dossier de sauvegarde s'il nexiste pas on le crer
+# si le dossier de sauvegarde n'existe pas on le cree
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if [ -d  ${SAUVEFOLDERA}/${DATE} ]
