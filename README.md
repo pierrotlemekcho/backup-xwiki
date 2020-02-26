@@ -8,7 +8,6 @@ ne pas oublier  mysql_config_editor
 ## cron
 
 lancer les scripts bacxwiki.sh -j  et bacapache.sh -j par le CRON (sudo et SHELL=/bin/bash ) tout les jours
-
 lancer les scripts bacxwiki.sh -s  et bacapache.sh -s par le CRON (sudo et SHELL=/bin/bash ) toute les semaines
 
 # Restaurer xwiki.
