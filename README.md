@@ -5,11 +5,7 @@ Script de sauvegarde et restauration pour XWIKI sur UBUNTU server 18.04
 
 ne pas oublier  mysql_config_editor
 
-## cron
-
-lancer les scripts bacxwiki.sh -j  et bacapache.sh -j par le CRON (sudo et SHELL=/bin/bash ) tout les jours
-lancer les scripts bacxwiki.sh -s  et bacapache.sh -s par le CRON (sudo et SHELL=/bin/bash ) toute les semaines
-
+# cron
 # Restaurer xwiki.
 
 Pour restaurer xwikin on utilise une machine virtuelle qui est configuree en utilisant terraform et ansible.
