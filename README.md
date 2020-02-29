@@ -9,9 +9,13 @@ ne pas oublier  mysql_config_editor
 lancer les scripts (cron sudo) avec les bons arguments
 
 SHELL=/bin/bash
+
 10 0 * * * /home/$user/backup/script/bacxwiki.sh -j -u $user >> /home/$user/backup/script/xwikisauve.log 2>&1
+
 20 0 * * * /home/$user/backup/script/bacapache.sh -j -u $user >> /home/$user/backup/script/apachesauve.log 2>&1
+
 30 0 * * 7 /home/$user/backup/script/bacxwiki.sh -s -u $user >> /home/$user/backup/script/xwikisauve.log 2>&1
+
 50 0 * * 7 /home/$user/backup/script/bacapache.sh -s -u $user >> /home/$user/backup/script/apachesauve.log 2>&1
 
 
