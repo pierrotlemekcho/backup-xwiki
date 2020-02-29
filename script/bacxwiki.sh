@@ -10,49 +10,44 @@
 # 5)backup de /usr/local/Biblio un repertoir de documents creer pour les premeieres version de xwiki <2.?? 
 # que l'on garde,ces documents sont accesibles et mis a jour depuis un partage SAMBA
 
-
-
-
 usage() { echo "
-# usage bactar [-j] [-s] [-m]
+# usage bactar [-j] [-s] [-m] [-u username]
 # -j sauvegarde journaliere --> le repertoire lundi/mardi/mercredi....../dimanche
 # -s sauvegarde hebdomadaire --> le repertoire 1 2 ...52
 # -m sauvegarde manuelle --> le repertoire=$(date '+%Y-%m-%d-%H-%M-%S')
+# -u +argument = username pour le repertoire des backups
 "; }
 
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#import des chemins vers les repetoires à sauvegarder
-###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-source /home/pierre/backup/script/repertoires.cnf
-
-
-###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# chois du jour de sauvegarde
+#    date de sauvegarde
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-if (($# == 0)); 
-then
-usage
-exit 1
-fi
-
-
-
-while getopts ":jsm" opt
+while getopts ":jsmu:" opt
 do
+	echo " option choisi $opt"
 	case $opt in
-		j  ) DATE=$(date '+%A');;
-		s  ) DATE=$(date '+%W');;
-		m  ) DATE=$(date '+%Y-%m-%d-%H-%M');;
-		\? ) usage 
-		    exit 1 
+
+		j) DATE=$(date '+%A');;
+		s) DATE=$(date '+%W');;
+		m) DATE=$(date '+%Y-%m-%d-%H-%M');;
+		u) echo " le user est : $OPTARG"
+			user=$OPTARG;;
+		\?) usage
+	       		exit 1 ;; 
 
 	esac
 done
 
+echo "======== sauvegarde du : $(date '+%Y-%m-%d-%H-%M') ========="
+echo "dans le repertoire :~/backup/apachesauve/$DATE de $user "
 
-echo " sauvegarde dans dans le repertoire :$DATE"
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# import de chemins vers les repertoires de sauvegares
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+source /home/$user/backup/script/repertoires.cnf
+
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # dossier de sauvegarde s'il nexiste pas on le creer
@@ -63,7 +58,7 @@ then
 	echo "le repertoire existe déja , on va ecraser les fichier avec la nouvelle sauvegarde"
 else
 	mkdir ${SAUVEFOLDERX}/${DATE}
-	echo " le repertoire n'existe pas on le crée"
+	echo " le repertoire n'existe pas on le crée et on sauvegarde dedans"
 fi
 
 
@@ -139,12 +134,8 @@ cd ${BIBLIOFOLDER}
 tar -zcf ${SAUVEFOLDERX}/${DATE}/Biblio.tar.gz ../Biblio/
 fi
 
-if false #debug============================================
-then
-#code à sauter
-echo " fin debug"
-fi
-#debug============================================================
 
 
-echo "TERMINE"
+echo "sauvegarde du : $(date '+%Y-%m-%d-%H-%M') terminé "
+echo "***********************  BRAVO   ********************************"
+exit 0
