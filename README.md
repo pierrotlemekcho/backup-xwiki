@@ -8,32 +8,28 @@ ne pas oublier  mysql_config_editor
 
 #SAUVEGARDE MANUELLE
 
-dans le répertoire script:
-sudo bash bacapache.sh -m
-sudo bash bacxwiki.sh -m
-verifier les fichier log
+dans le répertoire script:  
+sudo bash bacapache.sh -m  
+sudo bash bacxwiki.sh -m  
+verifier les fichier log  
 
 # RESTAURATION
 
-arreter le serveur tomcat et lancer la restauration
-sudo /etc/init.d/tomcat8 stop
-sudo bash restxwiki.sh (depuis le repertoire script)
-sudo /etc/init.d/tomcat8 restart
-sudo service apache2 reload
+arreter le serveur tomcat et lancer la restauration  
+sudo /etc/init.d/tomcat8 stop  
+sudo bash restxwiki.sh (depuis le repertoire script)  
+sudo /etc/init.d/tomcat8 restart  
+sudo service apache2 reload  
 
 # cron
-lancer les scripts (cron sudo) avec les bons arguments
+lancer les scripts (cron sudo) avec les bons arguments  
+SHELL=/bin/bash  
+10 0 * * * /home/$user/backup/script/bacxwiki.sh -j -u $user >> /home/$user/backup/script/xwikisauve.log 2>&1  
+20 0 * * * /home/$user/backup/script/bacapache.sh -j -u $user >> /home/$user/backup/script/apachesauve.log 2>&1  
+30 0 * * 7 /home/$user/backup/script/bacxwiki.sh -s -u $user >> /home/$user/backup/script/xwikisauve.log 2>&1  
+50 0 * * 7 /home/$user/backup/script/bacapache.sh -s -u $user >> /home/$user/backup/script/apachesauve.log 2>&1  
 
-SHELL=/bin/bash
-
-10 0 * * * /home/$user/backup/script/bacxwiki.sh -j -u $user >> /home/$user/backup/script/xwikisauve.log 2>&1
-
-20 0 * * * /home/$user/backup/script/bacapache.sh -j -u $user >> /home/$user/backup/script/apachesauve.log 2>&1
-
-30 0 * * 7 /home/$user/backup/script/bacxwiki.sh -s -u $user >> /home/$user/backup/script/xwikisauve.log 2>&1
-
-50 0 * * 7 /home/$user/backup/script/bacapache.sh -s -u $user >> /home/$user/backup/script/apachesauve.log 2>&1
-
+# **********************************   ALEX ***********************************
 
 # Restaurer xwiki.
 
