@@ -5,6 +5,22 @@ Script de sauvegarde et restauration pour XWIKI sur UBUNTU server 18.04
 
 ne pas oublier  mysql_config_editor
 
+
+#SAUVEGARDE MANUELLE
+
+dans le répertoire script:
+sudo bash bacapache.sh -m
+sudo bash bacxwiki.sh -m
+verifier les fichier log
+
+# RESTAURATION
+
+arreter le serveur tomcat et lancer la restauration
+sudo /etc/init.d/tomcat8 stop
+sudo bash restxwiki.sh (depuis le repertoire script)
+sudo /etc/init.d/tomcat8 restart
+sudo service apache2 reload
+
 # cron
 lancer les scripts (cron sudo) avec les bons arguments
 
