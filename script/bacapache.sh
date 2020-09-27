@@ -82,10 +82,10 @@ echo " copie de :/etc/"
 cd /etc/
 cp -p hosts ${SAUVEFOLDERA}/${DATE}/.
 
-echo " copie de :/etc/network/"
+echo " copie de :etc/netplan/00-installer-config.yaml"
 
-cd /etc/network/
-cp -p interfaces ${SAUVEFOLDERA}/${DATE}/.
+cd /etc/netplan/
+cp -p 00-installer-config.yaml ${SAUVEFOLDERA}/${DATE}/.
 
 echo " copie de :/etc/samba/"
 
