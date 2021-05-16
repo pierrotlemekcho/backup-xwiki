@@ -5,6 +5,10 @@ Script de sauvegarde et restauration pour XWIKI sur UBUNTU server 20.04
 
 ne pas oublier  mysql_config_editor
 
+#INSTALLATION
+dans le répertoir home de l'utilisateur
+git clone https://github.com/pierrotlemekcho/backup-xwiki.git backup
+adapter le fichier de configuration ~/backup/script/repertoires.cnf.examples en ~/backup/script/repertoires.cnf
 
 #SAUVEGARDE MANUELLE
 
@@ -29,7 +33,7 @@ SHELL=/bin/bash
 30 0 * * 7 /home/$user/backup/script/bacxwiki.sh -s -u $user >> /home/$user/backup/script/xwikisauve.log 2>&1  
 50 0 * * 7 /home/$user/backup/script/bacapache.sh -s -u $user >> /home/$user/backup/script/apachesauve.log 2>&1  
 
-# **********************************   ALEX ***********************************
+# **********************************   ALEX voir si tout est a suprimer ***********************************
 
 # Restaurer xwiki.
 
