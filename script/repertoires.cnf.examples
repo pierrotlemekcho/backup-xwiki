@@ -23,7 +23,11 @@ WEBAPPSFOLDER=/usr/lib/xwiki
 #Biblio folder
 BIBLIOFOLDER=/usr/local/Biblio
 
+#SAUVEGARDE folder pour apache suposé situé dans le repertoire de l'utilisateur
+SAUVEFOLDERA=/home/pierre/backup/apachesauve
+#remplacer "user" par votre user
 
-#SAUVEGARDE folder suposé situé dans le repertoire de l'utilisateur
-SAUVEFOLDER=/home/"user"/backup/apachesauve
-remplacer "user" par votre user
+#SAUVEGARDE folder pour xwiki suposé situé dans le repertoire de l'utilisateur
+SAUVEFOLDERX=/home/pierre/backup/xwikisauve
+#remplacer "user" par votre user
+

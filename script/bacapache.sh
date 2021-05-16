@@ -72,22 +72,22 @@ echo " copie de :/etc/libapache2-mod-jk/"
 cd /etc/libapache2-mod-jk/
 cp -p workers.properties ${SAUVEFOLDERA}/${DATE}/.
 
-echo " copie de :/etc/tomcat8/"
+echo " copie de :/etc/tomcat9/"
 
-cd /etc/tomcat8/
+cd /etc/tomcat9/
 cp -p server.xml ${SAUVEFOLDERA}/${DATE}/.
 
 echo " copie de :/etc/"
 
-cd /etc/
-cp -p hosts ${SAUVEFOLDERA}/${DATE}/.
+#cd /etc/
+#cp -p hosts ${SAUVEFOLDERA}/${DATE}/.
 
-echo " copie de :etc/netplan/00-installer-config.yaml"
+#echo " copie de :etc/netplan/00-installer-config.yaml"
 
-cd /etc/netplan/
-cp -p 00-installer-config.yaml ${SAUVEFOLDERA}/${DATE}/.
+#cd /etc/netplan/
+#cp -p 00-installer-config.yaml ${SAUVEFOLDERA}/${DATE}/.
 
-echo " copie de :/etc/samba/"
+echo " copie de :/etc/samba/smb.conf"
 
 cd /etc/samba/
 cp -p smb.conf ${SAUVEFOLDERA}/${DATE}/.
