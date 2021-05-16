@@ -1,5 +1,5 @@
 ## backup-xwiki
-Script de sauvegarde et restauration pour XWIKI sur UBUNTU server 18.04
+Script de sauvegarde et restauration pour XWIKI sur UBUNTU server 20.04
 
 ["Marche à suivre" :](https://sifklic.sif-revetement.com/xwiki/bin/view/P05%20GERER%20LES%20RESSOURCES/Informatiser/installation%20XWIKI%20sif/)
 
